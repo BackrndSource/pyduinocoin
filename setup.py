@@ -30,7 +30,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
-    packages=setuptools.find_packages(where="src"),
+    package_dir={"": "pyduinocoin"},
+    packages=setuptools.find_packages(where="pyduinocoin"),
     python_requires=">=3.5",
 )
