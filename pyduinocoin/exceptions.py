@@ -1,0 +1,2 @@
+class PyDuinoCoinException(Exception):
+    pass
