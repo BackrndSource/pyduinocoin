@@ -1,0 +1,5 @@
+[build-system]
+requires = [
+    "requests>=2.21.0"
+]
+build-backend = "setuptools.build_meta"

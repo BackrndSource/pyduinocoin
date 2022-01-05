@@ -12,11 +12,10 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/backrndsource/pyduinocoin",
-    packages=setuptools.find_packages(),
+    project_urls={
+        "Bug Tracker": "https://github.com/backrndsource/pyduinocoin/issues",
+    },
     keywords=["DUCO", "DuinoCoin", "api-rest", "python3", "duino", "duino-coin", "api", "client", "REST", "crypto", "coin"],
-    install_requires=[
-        "requests"
-    ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
@@ -31,5 +30,7 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    package_dir={"": "src"},
+    packages=setuptools.find_packages(where="src"),
     python_requires=">=3.5",
 )
