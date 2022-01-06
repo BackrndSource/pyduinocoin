@@ -6,7 +6,7 @@ from pyduinocoin import DictObj
 class DictObjTests(TestCase):
     def setUp(self):
         self.entries = {
-            'title': 'images',
+            'ti tl%%.-.¨¨ %e': 'images',
             'results': [
                 {
                     'path': 'img/',

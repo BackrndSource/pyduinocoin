@@ -9,7 +9,7 @@ class DictObj():
                     value = [DictObj(item) if isinstance(item, dict) else item for item in value]
                 if isinstance(entries[key], dict):
                     value = DictObj(value)
-                setattr(self, key, value)
+                setattr(self, ''.join(filter(str.isalnum, key)), value)
 
     def __delitem__(self, key):
         return delattr(self, key)
@@ -74,7 +74,7 @@ class DictObj():
         return self.__dict__.setdefault(key, value)
 
     def update(self, entries):
-        return self.__dict__.update(entries)
+        return self.__init__(entries)
 
     def values(self):
         return self.__dict__.values()
