@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyduinocoin",
-    version="1.0.0",
+    version="1.0.1",
     author="Sergio Contreras Agustí (backrndsource)",
     author_email="backrndsource@gmail.com",
     description="pyDuinoCoin is a simple python integration for the DuinoCoin REST API, that allows developers to communicate with DuinoCoin Master Server.",
@@ -30,7 +30,6 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "pyduinocoin"},
-    packages=setuptools.find_packages(where="pyduinocoin"),
+    packages=setuptools.find_packages(),
     python_requires=">=3.5",
 )
