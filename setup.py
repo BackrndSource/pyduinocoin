@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="pyduinocoin",
-    version="1.0.1",
+    version="1.0.2",
     author="Sergio Contreras Agustí (backrndsource)",
     author_email="backrndsource@gmail.com",
     description="pyDuinoCoin is a simple python integration for the DuinoCoin REST API, that allows developers to communicate with DuinoCoin Master Server.",
