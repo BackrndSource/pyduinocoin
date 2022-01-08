@@ -35,40 +35,40 @@ class DuinoClient():
             raise PyDuinoCoinException('SERVER REQUEST ERROR (' + str(response.status_code) + ')')
 
 
-    def user(self, username):
+    def user(self, username, limit=5):
         '''
         Return username's balance, last transactions and miners in one request.
         '''
 
-        return self._get('users/'+str(username))
+        return self._get(f'users/{str(username)}', {'limit':limit})
 
     def auth(self, username, password):
         '''
         Check username's password.
         '''
         
-        return self._get('auth/'+str(username), {'password':password})
+        return self._get(f'auth/{str(username)}', {'password':password})
 
-    def transactions(self, hash=None):
+    def transactions(self, hash=None, limit=None):
         '''
         Return all transactions or an unique transaction with that hash.
         '''
         
-        return self._get('transactions/'+str(hash)) if hash else self._get('transactions') 
+        return self._get(f'transactions/{str(hash)}') if hash else self._get('transactions', {'limit':limit} if limit else {}) 
 
-    def user_transactions(self, username):
+    def user_transactions(self, username, limit=10):
         '''
         Return transactions related to username.
         '''
 
-        return self._get('user_transactions/'+str(username))
+        return self._get(f'user_transactions/{str(username)}', {'limit':limit})
 
     def id_transactions(self, id):
         '''
         Return a transaction with that id.
         '''
 
-        return self._get('id_transactions/'+str(id))
+        return self._get(f'id_transactions/{str(id)}')
 
     def transfer(self, username, password, recipient, amount, memo='Powered by pyduinocoin'):
         '''
@@ -77,19 +77,19 @@ class DuinoClient():
 
         return self._get('transaction', {'username':username, 'password':password, 'recipient':recipient, 'amount':amount, 'memo':memo}, results_key=None)
 
-    def miners(self, username=None):
+    def miners(self, username=None, limit=None):
         '''
         Return all miners or username's miners.
         '''
 
-        return self._get('miners/'+str(username)) if username else self._get('miners')
+        return self._get(f'miners/{str(username)}', {'limit':limit} if limit else {}) if username else self._get('miners', {'limit':limit} if limit else {})
     
-    def balances(self, username=None):
+    def balances(self, username=None, limit=None):
         '''
         Return all balances or username's balance.
         '''
 
-        return self._get('balances/'+str(username)) if username else self._get('balances')
+        return self._get(f'balances/{str(username)}') if username else self._get('balances', {'limit':limit} if limit else {})
 
     def statistics(self):
         '''

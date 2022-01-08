@@ -31,7 +31,7 @@ class DuinoClientTests(TestCase):
     
     def test_get_user_transactions(self):
         try:
-            user_transactions = self.client.user_transactions('Backrndsource')
+            user_transactions = self.client.user_transactions('Backrndsource', limit=10)
         except Exception as exception:
             self.assertIn('SERVER REQUEST ERROR', exception.args[0])
             print(exception)
@@ -45,7 +45,7 @@ class DuinoClientTests(TestCase):
 
     def test_get_miners(self):
         try:
-            miners = self.client.miners()
+            miners = self.client.miners(limit=10)
         except Exception as exception:
             self.assertIn('SERVER REQUEST ERROR', exception.args[0])
             print(exception)
