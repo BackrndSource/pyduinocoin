@@ -110,4 +110,4 @@ class DuinoClient():
         Submit exchange request in the DUCO Exchange.
         '''
 
-        return self._get('transaction', {'username':username, 'password':password, 'email':email, 'type':type, 'amount':amount, 'coin':coin, 'address':address}, results_key=None)
+        return self._get('exchange_request', {'username':username, 'password':password, 'email':email, 'type':type, 'amount':amount, 'coin':coin, 'address':address}, results_key=None)
